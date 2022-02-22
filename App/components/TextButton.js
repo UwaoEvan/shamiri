@@ -1,9 +1,9 @@
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet, Image } from "react-native";
 
-export default function TextButton ({ title, onPress, source }){
+export default function TextButton ({ title, onPress, source, style }){
     return (
-        <TouchableOpacity onPress={onPress} style={styles.container}>
+        <TouchableOpacity onPress={onPress} style={[styles.container, style]}>
             <Text style={styles.title}>{title}</Text>
             <Image 
                 source={source}
@@ -24,8 +24,8 @@ const styles = StyleSheet.create({
         fontFamily: 'Raleway-Regular'
     },
     icon:{
-        width: 15,
-        height: 15,
+        width: 10,
+        height: 10,
         marginLeft: 5
     }
 })
