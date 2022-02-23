@@ -1,9 +1,9 @@
 import React from "react";
 
-import Personal from "./App/screens/Personal";
+import Daily from "./App/screens/Daily";
 
 export default function App (){
   return (
-    <Personal/>
+    <Daily/>
   )
 }
