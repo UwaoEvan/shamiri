@@ -13,7 +13,7 @@ export default function Daily (){
     return (
         <ScrollView style={globalStyles.container}>
                 <SafeAreaView>
-                    <View style={styles.btnCont}>
+                    <View style={globalStyles.btnCont}>
                         <CustomButton title='Daily' active={active}/>
                         <CustomButton title='Weekly' active={active}/>
                     </View>
@@ -41,13 +41,5 @@ const styles = StyleSheet.create({
         margin: 20,
         padding: 20
     },
-    btnCont: {
-        backgroundColor: COLORS.brown,
-        marginHorizontal: 20,
-        padding: 4,
-        flexDirection: 'row',
-        justifyContent: 'space-evenly',
-        borderRadius: 20,
-        marginTop: 20
-    }
+    
 })
