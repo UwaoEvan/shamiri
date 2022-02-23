@@ -6,8 +6,8 @@ import { ProgressChart } from "react-native-chart-kit";
 export default function CircularProgress ({ daily }) {
     const data = {
         labels: ["Mental Health", "Satisfaction", "Family/Social Support", "Work", "Sence of Purpose"], // optional
-        data: [0.4, 0.6, 0.8, 0.3, 0.5],
-        colors: ['rgba(20, 48, 41)', 'rgba(133, 189, 175)', 'rgba(189, 217, 210)', 'rgba(227, 176, 159)', 'rgba(246, 233, 231)']
+        data: [0.8, 0.25, 0.45, 0.6, 0.4],
+        colors: ['rgb(246, 233, 231)', 'rgb(227, 176, 159)', 'rgb(189, 217, 210)', 'rgb(133, 189, 175)', 'rgb(20, 48, 41)']
       };
     const chartConfig = {
         backgroundGradientFrom: "#fff",

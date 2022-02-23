@@ -38,5 +38,14 @@ export const globalStyles = StyleSheet.create({
         textMonthFontSize: 16,
         textDayHeaderFontSize: 16,
         textSectionTitleColor: COLORS.white,
+    },
+    btnCont: {
+        backgroundColor: COLORS.brown,
+        marginHorizontal: 20,
+        padding: 4,
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        borderRadius: 20,
+        marginTop: 20
     }
 })

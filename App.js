@@ -1,9 +1,9 @@
 import React from "react";
 
-import Daily from "./App/screens/Daily";
+import Weekly from "./App/screens/Weekly";
 
 export default function App (){
   return (
-    <Daily/>
+    <Weekly/>
   )
 }
