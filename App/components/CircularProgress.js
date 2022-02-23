@@ -21,16 +21,16 @@ export default function CircularProgress ({ daily }) {
 
     const { width, height } = Dimensions.get('screen')
     return(
-        <View style={styles.cont}>
+        <View style={daily ? styles.cont1 : styles.cont}>
         <ProgressChart
             data={data}
-            width={daily ? 350 : width * 0.8}
+            width={daily ? 350 : 330}
             height={daily ? 250 : 150}
             strokeWidth={daily ? 14 : 5}
             radius={daily ? 45 : 25}
             chartConfig={chartConfig}
             withCustomBarColorFromData={data.colors}
-            style={daily ? { marginLeft: 0 } : { marginLeft: - width / 10 }}
+            style={daily ? { marginLeft: 0 } : { marginLeft: - 40 }}
             hideLegend={daily ? true : false}
         />
         <Text style={daily ? styles.number1 : styles.number}>50</Text>
@@ -40,7 +40,10 @@ export default function CircularProgress ({ daily }) {
 
 const { width, height } = Dimensions.get('screen')
 const styles = StyleSheet.create({
-    cont:{
+    cont: {
+        width: 330
+    },
+    cont1:{
         position: 'relative',
         height: 250,
         width: 350,
@@ -49,7 +52,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Raleway-Bold',
         fontSize: 30,
         position: 'absolute',
-        top: '35%',
+        top: '34%',
         left: '22%'
     },
     number1: {
