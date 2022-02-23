@@ -2,12 +2,15 @@ import React from 'react'
 import { ScrollView, View, Text, StyleSheet, SafeAreaView, Dimensions } from 'react-native'
 import { COLORS } from '../constants/colors'
 import { Calendar, WeekCalendar } from 'react-native-calendars'
+import CalendarStrip from 'react-native-slideable-calendar-strip/lib/CalendarStrip'
 
 import { globalStyles } from '../constants/globalStyles'
 import Card from '../components/Card'
 import CircularProgress from '../components/CirclarProgress'
 import TextButton from '../components/TextButton'
+import TextButtonWhite from '../components/TextButtonWhite'
 import NoteCard from '../components/NoteCard'
+
 
 export default function Personal (){
     
@@ -22,39 +25,42 @@ export default function Personal (){
                         </View>
               
                         <Calendar
-                            // current={'2022-02-16'}
-                            // minDate={'2022-02-13'}
-                            // maxDate={'2022-02-19'}
-                            // hideExtraDays={true}
-                            theme={{
-                                calendarBackground: COLORS.lightSecondary,
-                                backgroundColor: COLORS.lightSecondary,
-                                dayTextColor: COLORS.white,
-                                textSectionTitleColor: '#b6c1cd',
-                                textSectionTitleDisabledColor: '#d9e1e8',
-                                selectedDayBackgroundColor: '#00adf5',
-                                selectedDayTextColor: '#ffffff',
-                                todayTextColor: '#00adf5',
-                                textDisabledColor: '#d9e1e8',
-                                dotColor: '#00adf5',
-                                selectedDotColor: '#ffffff',
-                                arrowColor: 'orange',
-                                disabledArrowColor: '#d9e1e8',
-                                monthTextColor: 'blue',
-                                indicatorColor: 'blue',
-                                textDayFontFamily: 'Raleway-Regular',
-                                textMonthFontFamily: 'Raleway-Regular',
-                                textDayHeaderFontFamily: 'Raleway-Regular',
-                                textDayFontWeight: '300',
-                                textMonthFontWeight: 'bold',
-                                textDayHeaderFontWeight: '300',
-                                textDayFontSize: 16,
-                                textMonthFontSize: 16,
-                                textDayHeaderFontSize: 16
-                            }}
+                            markingType={'custom'}
+                            markedDates={{
+                                '2022-02-16': {
+                                  customStyles: {
+                                    container: {
+                                      backgroundColor: 'green'
+                                    },
+                                    text: {
+                                      color: 'black',
+                                      fontWeight: 'bold'
+                                    },
+                                  },
+                                },
+                                '2022-02-17': {
+                                  customStyles: {
+                                    container: {
+                                      backgroundColor: 'white',
+                                      elevation: 2
+                                    },
+                                    text: {
+                                      color: 'blue'
+                                    },
+                                  }
+                                }
+                              }}
+                            theme={globalStyles.monthlyCalendar}
+                            style={{ borderRadius: 20, marginTop: 20,  height: 330}}
                         />
-                        {/* <WeekCalendar /> */}
-                        <TextButton title={'Show more'} source={require('../assets/icons/arrow-down.png')} style={{ marginTop: 10 }}/>
+                        {/* <CalendarStrip
+                            style={{ backgroundColor: 'red'}}
+                            showWeekNumber
+                            weekStartsOn={1}
+                            selectedDate='2022-02-20'
+                            markedDate={['2022-02-20', '2022-02-21', '2022-02-22', '2022-02-23']}
+                        /> */}
+                        <TextButtonWhite title={'Show less'} source={require('../assets/icons/arrow-up.png')} style={{ marginTop: 10 }}/>
                     </View>
                 </View>
                 <View style={styles.footer}>
@@ -73,7 +79,7 @@ export default function Personal (){
                                <NoteCard/>
                                <NoteCard/>
                            </ScrollView>
-                            <TextButton title='More' source={require('../assets/icons/arrow-next.png')} style={styles.more}/>
+                            <TextButton title='More' source={require('../assets/icons/arrow-next.png')} style={styles.more} />
                         </View>
                     </Card>
                 </View>
@@ -87,7 +93,7 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.secondary,
     },
     header: {
-        height: 430,
+        height: '45%',
         backgroundColor: COLORS.primary,
     },
     innerHeader:{
