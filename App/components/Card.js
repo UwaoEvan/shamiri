@@ -2,9 +2,9 @@ import React from "react";
 import { View, StyleSheet } from 'react-native'
 import { COLORS } from "../constants/colors";
 
-export default function Card ({ children }){
+export default function Card ({ children , style }){
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, style]}>
             { children }
         </View>
     )
