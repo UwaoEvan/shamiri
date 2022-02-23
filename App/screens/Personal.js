@@ -6,7 +6,7 @@ import CalendarStrip from 'react-native-slideable-calendar-strip/lib/CalendarStr
 
 import { globalStyles } from '../constants/globalStyles'
 import Card from '../components/Card'
-import CircularProgress from '../components/CirclarProgress'
+import CircularProgress from '../components/CircularProgress'
 import TextButton from '../components/TextButton'
 import TextButtonWhite from '../components/TextButtonWhite'
 import NoteCard from '../components/NoteCard'
