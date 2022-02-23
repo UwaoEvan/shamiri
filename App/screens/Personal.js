@@ -15,8 +15,8 @@ import NoteCard from '../components/NoteCard'
 export default function Personal (){
     
     return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.secondary }}>
-            <ScrollView style={[globalStyles.container, styles.container]}>
+        <ScrollView style={[globalStyles.container, styles.container]}>
+                <SafeAreaView >
                 <View style={styles.header}>
                     <View style={styles.innerHeader}>
                         <View style={styles.headerContent}>
@@ -63,6 +63,7 @@ export default function Personal (){
                         <TextButtonWhite title={'Show less'} source={require('../assets/icons/arrow-up.png')} style={{ marginTop: 10 }}/>
                     </View>
                 </View>
+                </SafeAreaView>
                 <View style={styles.footer}>
                     <Card>
                         <View style={styles.cardContent}>
@@ -84,7 +85,6 @@ export default function Personal (){
                     </Card>
                 </View>
             </ScrollView>
-        </SafeAreaView>
     )
 }
 const { width, height } = Dimensions.get('screen')
