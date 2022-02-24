@@ -1,6 +1,7 @@
 import React from "react";
 import { Dimensions, View, Text, StyleSheet } from 'react-native'
 import { ProgressChart } from "react-native-chart-kit";
+import { COLORS } from "../constants/colors";
 
 
 export default function CircularProgress ({ daily }) {
@@ -53,13 +54,15 @@ const styles = StyleSheet.create({
         fontSize: 30,
         position: 'absolute',
         top: '34%',
-        left: '22%'
+        left: '22%',
+        color: COLORS.black
     },
     number1: {
         fontFamily: 'Raleway-Bold',
         fontSize: 50,
         position: 'absolute',
         top: '33%',
-        left: '42%'
+        left: '42%',
+        color: COLORS.black
     }
 })
