@@ -5,6 +5,7 @@ import CustomButton from '../components/CustomButton'
 import { globalStyles } from '../constants/globalStyles'
 import Summary from '../components/Summary'
 import LinearChart from '../components/LinearChart'
+import { COLORS } from '../constants/colors'
 
 export default function Daily ({ navigation, route }){
     const [active, setActive] = useState('Weekly')
@@ -67,9 +68,10 @@ const styles = StyleSheet.create({
         marginHorizontal: 20
     },
     footerTitle:{
-        fontFamily: 'Raleway-Bold',
+        fontFamily: 'Raleway-Regular',
         fontSize: 16,
-        paddingVertical: 20
+        paddingVertical: 20,
+        color: COLORS.black
     },
     image:{
         width: '100%',
@@ -85,6 +87,7 @@ const styles = StyleSheet.create({
     caption:{
         fontFamily: 'Raleway-Regular',
         fontSize: 10,
+        color: COLORS.black
     },
     fCont:{
         marginBottom: 20
