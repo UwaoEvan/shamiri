@@ -1,8 +1,6 @@
-import React from 'react'
+import React,{ useState } from 'react'
 import { ScrollView, View, Text, StyleSheet, SafeAreaView, Dimensions } from 'react-native'
 import { COLORS } from '../constants/colors'
-import { Calendar, WeekCalendar } from 'react-native-calendars'
-import CalendarStrip from 'react-native-slideable-calendar-strip/lib/CalendarStrip'
 
 import { globalStyles } from '../constants/globalStyles'
 import Card from '../components/Card'
@@ -10,60 +8,32 @@ import CircularProgress from '../components/CircularProgress'
 import TextButton from '../components/TextButton'
 import TextButtonWhite from '../components/TextButtonWhite'
 import NoteCard from '../components/NoteCard'
+import CustomCalendar from '../components/CustomCalendar'
 
 
 export default function Personal (){
-    
+    const [more, setMore] = useState(false)
     return (
-        <ScrollView style={[globalStyles.container, styles.container]}>
-                <SafeAreaView >
-                <View style={styles.header}>
-                    <View style={styles.innerHeader}>
+        <>
+            <SafeAreaView style={{ backgroundColor: COLORS.secondary}}/>
+            <ScrollView style={[globalStyles.container, styles.container]}>
+                <View style={more ? styles.header : styles.headerL}>
+                    <View style={[styles.innerHeader]}>
                         <View style={styles.headerContent}>
                             <Text style={globalStyles.title}>For You</Text>
                             <Text style={styles.date}>Feb 18 2022, Friday</Text>
                         </View>
-              
-                        <Calendar
-                            markingType={'custom'}
-                            markedDates={{
-                                '2022-02-16': {
-                                  customStyles: {
-                                    container: {
-                                      backgroundColor: 'green'
-                                    },
-                                    text: {
-                                      color: 'black',
-                                      fontWeight: 'bold'
-                                    },
-                                  },
-                                },
-                                '2022-02-17': {
-                                  customStyles: {
-                                    container: {
-                                      backgroundColor: 'white',
-                                      elevation: 2
-                                    },
-                                    text: {
-                                      color: 'blue'
-                                    },
-                                  }
-                                }
-                              }}
-                            theme={globalStyles.monthlyCalendar}
-                            style={{ borderRadius: 20, marginTop: 20,  height: 330}}
+                        <View style={{ marginTop: 20}}>
+                            <CustomCalendar more={more}/>
+                        </View>
+                        <TextButtonWhite 
+                            title={more ? 'Show less' : 'Show more'} 
+                            source={more ? require('../assets/icons/arrow-up.png') : require('../assets/icons/arrow-down.png')} 
+                            style={{ marginTop: 10 }}
+                            onPress={() => setMore(!more)}
                         />
-                        {/* <CalendarStrip
-                            style={{ backgroundColor: 'red'}}
-                            showWeekNumber
-                            weekStartsOn={1}
-                            selectedDate='2022-02-20'
-                            markedDate={['2022-02-20', '2022-02-21', '2022-02-22', '2022-02-23']}
-                        /> */}
-                        <TextButtonWhite title={'Show less'} source={require('../assets/icons/arrow-up.png')} style={{ marginTop: 10 }}/>
                     </View>
                 </View>
-                </SafeAreaView>
                 <View style={styles.footer}>
                     <Card>
                         <View style={styles.cardContent}>
@@ -75,22 +45,27 @@ export default function Personal (){
                     <Card>
                         <View style={styles.cardContent}>
                             <Text style={styles.title}>Your wellness plan</Text>
-                           <ScrollView horizontal>
-                               <NoteCard/>
-                               <NoteCard/>
-                               <NoteCard/>
-                           </ScrollView>
+                            <ScrollView horizontal>
+                                <NoteCard/>
+                                <NoteCard/>
+                                <NoteCard/>
+                            </ScrollView>
                             <TextButton title='More' source={require('../assets/icons/arrow-next.png')} style={styles.more} />
                         </View>
                     </Card>
                 </View>
             </ScrollView>
+        </>
     )
 }
-const { width, height } = Dimensions.get('screen')
+
 const styles = StyleSheet.create({
     container:{
         backgroundColor: COLORS.secondary,
+    },
+    headerL:{
+        height: '30%',
+        backgroundColor: COLORS.primary,
     },
     header: {
         height: '45%',
@@ -111,7 +86,8 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 40
     },
     title: {
-        fontFamily: 'Raleway-Medium'
+        fontFamily: 'Raleway-Medium',
+        paddingBottom: 20
     },
     cardContent: {
         padding: 20
