@@ -11,7 +11,7 @@ import NoteCard from '../components/NoteCard'
 import CustomCalendar from '../components/CustomCalendar'
 
 
-export default function Personal (){
+export default function Personal ({ navigation }){
     const [more, setMore] = useState(false)
     return (
         <>
@@ -39,7 +39,11 @@ export default function Personal (){
                         <View style={styles.cardContent}>
                             <Text style={styles.title}>TODAY</Text>
                             <CircularProgress/>
-                            <TextButton title='More' source={require('../assets/icons/arrow-next.png')}/>
+                            <TextButton 
+                                title='More' 
+                                source={require('../assets/icons/arrow-next.png')}
+                                onPress={() => navigation.navigate('daily', { date: 'Wed Jan 16 22' })}    
+                            />
                         </View>
                     </Card>
                     <Card>
@@ -50,7 +54,12 @@ export default function Personal (){
                                 <NoteCard/>
                                 <NoteCard/>
                             </ScrollView>
-                            <TextButton title='More' source={require('../assets/icons/arrow-next.png')} style={styles.more} />
+                            <TextButton 
+                                title='More' 
+                                source={require('../assets/icons/arrow-next.png')} 
+                                style={styles.more} 
+                                onPress={() => navigation.navigate('daily', { date: 'Wed Jan 16 22' })} 
+                            />
                         </View>
                     </Card>
                 </View>

@@ -6,13 +6,14 @@ import { globalStyles } from '../constants/globalStyles'
 import Summary from '../components/Summary'
 import LinearChart from '../components/LinearChart'
 
-export default function Daily (){
+export default function Daily ({ navigation, route }){
     const [active, setActive] = useState('Weekly')
+
     return (
         <ScrollView>
             <SafeAreaView>
                 <View style={globalStyles.btnCont}>
-                    <CustomButton title='Daily' active={active}/>
+                    <CustomButton title='Daily' active={active} onPress={() => navigation.navigate('daily', { date: 'Wed Jan 16, 2022' })} />
                     <CustomButton title='Weekly' active={active}/>
                 </View>
             </SafeAreaView>

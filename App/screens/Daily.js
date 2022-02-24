@@ -1,21 +1,22 @@
 import React, { useState } from 'react'
-import { View, StyleSheet, SafeAreaView, Dimensions , ScrollView} from 'react-native'
+import { View, StyleSheet, SafeAreaView, Dimensions, ScrollView} from 'react-native'
 
 import CircularProgress from '../components/CircularProgress'
 import { globalStyles } from '../constants/globalStyles'
 import Card from '../components/Card'
 import LinearProgress from '../components/LinearProgress'
-import { COLORS } from '../constants/colors'
 import CustomButton from '../components/CustomButton'
 
-export default function Daily (){
+export default function Daily (props){
+    const { navigation, route } = props;
     const [active, setActive] = useState('Daily')
+   
     return (
         <ScrollView style={globalStyles.container}>
                 <SafeAreaView>
                     <View style={globalStyles.btnCont}>
-                        <CustomButton title='Daily' active={active}/>
-                        <CustomButton title='Weekly' active={active}/>
+                        <CustomButton title='Daily' active={active} />
+                        <CustomButton title='Weekly' active={active} onPress={() => navigation.navigate('weekly', { date: 'Jan 13 - Jan 19 2022' })} />
                     </View>
                 </SafeAreaView>
                 <View style={styles.circleBg}>
