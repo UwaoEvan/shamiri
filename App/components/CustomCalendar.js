@@ -24,7 +24,7 @@ export default function CustomCalendar ({ more }){
                     tDate ? (
                         <View style={styles.toDate}>
                             <Text style={styles.custDate}>{date.day}</Text>
-                            <View style={[styles.dot1, { backgroundColor: marking?.backgroundColor}]}/>
+                            <View style={[styles.dot, { backgroundColor: marking?.backgroundColor || '#fff'}]}/>
                         </View>
                     ) : (
                         <View style={{ alignItems: 'center'}}>

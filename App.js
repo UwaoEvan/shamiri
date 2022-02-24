@@ -1,9 +1,9 @@
 import React from "react";
 
-import Personal from "./App/screens/Personal";
+import Route from "./App/navigation/Route";
 
 export default function App (){
   return (
-    <Personal/>
+    <Route/>
   )
 }
