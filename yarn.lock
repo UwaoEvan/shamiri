@@ -1992,11 +1992,6 @@ char-regex@^1.0.2:
   resolved "https://registry.yarnpkg.com/char-regex/-/char-regex-1.0.2.tgz#d744358226217f981ed58f479b1d6bcc29545dcf"
   integrity sha512-kWWXztvZ5SBQV+eRgKFeh8q5sLuZY2+8WUIzlxWVTg+oGwY14qylx1KbKzHd8P6ZYkAg0xyIDU9JMHhyJMZ1jw==
 
-chinese-lunar@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/chinese-lunar/-/chinese-lunar-0.1.4.tgz#c0fa7b927ef1625993e60b28c429dc44eb9c0276"
-  integrity sha1-wPp7kn7xYlmT5gsoxCncROucAnY=
-
 ci-info@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-2.0.0.tgz#67a9e964be31a51e15e5010d58e6f12834002f46"
@@ -2279,11 +2274,6 @@ data-urls@^2.0.0:
     abab "^2.0.3"
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
-
-date-fns@^1.29.0:
-  version "1.30.1"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
-  integrity sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
 
 dayjs@^1.8.15:
   version "1.10.7"
@@ -4796,7 +4786,7 @@ mkdirp@^0.5.1:
   dependencies:
     minimist "^1.2.5"
 
-moment@^2.24.0:
+moment@^2.24.0, moment@^2.29.1:
   version "2.29.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
   integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
@@ -5459,14 +5449,6 @@ react-native-progress@^5.0.0:
   integrity sha512-KjnGIt3r9i5Kn2biOD9fXLJocf0bwxPRxOyAgXEnZTJQU2O+HyzgGFRCbM5h3izm9kKIkSc1txh8aGmMafCD9A==
   dependencies:
     prop-types "^15.7.2"
-
-react-native-slideable-calendar-strip@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/react-native-slideable-calendar-strip/-/react-native-slideable-calendar-strip-0.4.0.tgz#9d4a086c2153c3ee6b4ad3b1f75e6179bd7df72d"
-  integrity sha512-juuU8HzECXQS0NQCQdaXyXaajUTM99k58/mzyJAdSiuoINXM+9WHNmpZKcRy4AVetpmHmTfz1i/UG81QsSUWXw==
-  dependencies:
-    chinese-lunar "^0.1.4"
-    date-fns "^1.29.0"
 
 react-native-svg@^12.1.1:
   version "12.1.1"
