@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
     },
     title:{
         fontFamily: 'Raleway-Regular',
-        textAlign: 'center'
+        textAlign: 'center',
+        color: COLORS.black
     }
 })
