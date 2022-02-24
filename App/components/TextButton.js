@@ -19,9 +19,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'flex-end',
+        marginTop: 10
     },
     title:{
-        fontFamily: 'Raleway-Regular'
+        fontFamily: 'Raleway-Regular',
+        color: '#afafaf'
     },
     icon:{
         width: 10,
